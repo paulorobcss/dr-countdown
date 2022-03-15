@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+</head>
+<body>
+    <img class="topImg" src="./images/top-image.svg">
+    <div class="content">
+        <div class="launcherInfo">
+            <div class="readyToLaunch">
+                <p>Ready to launch in...</p>
+            </div>
+
+            <div class="timer">
+                <div class="timerLabels">
+                    <p>Dias</p>
+                    <p>Horas</p>
+                    <p>Minutos</p>
+                    <p>Segundos</p>
+                </div>
+    
+                <div class="timerCountdown">
+                    <p id="days" class="number"></p>
+                    <p class="colons">:</p>
+                    <p id="hours" class="number"></p>
+                    <p class="colons">:</p>
+                    <p id="minutes" class="number"></p>
+                    <p class="colons">:</p>
+                    <p id="seconds" class="number"></p>
+
+                    <script>
+                        let launchDate = new Date("2022-07-18T10:05:45Z");
+
+                        function updateTime () {
+                            let totalRemainingSeconds = Number(launchDate) - Number(new Date());
+                            let timeRemainingInDays = Math.trunc(totalRemainingSeconds / 86400000);
+                            let timeRemainingInHours, timeRemainingInMinutes, timeRemainingInSeconds;
+                            timeRemainingInHours = Math.trunc((totalRemainingSeconds / 3600000)) - (24 * timeRemainingInDays);
+                            timeRemainingInMinutes = Math.trunc((totalRemainingSeconds / 60000)) - (1440 * timeRemainingInDays) - (60 * timeRemainingInHours);
+                            timeRemainingInSeconds = Math.trunc((totalRemainingSeconds / 1000)) - (86400 * timeRemainingInDays) - (3600 * timeRemainingInHours) - (60 * timeRemainingInMinutes);
+
+                            if (timeRemainingInDays <= 9) {
+                                document.getElementById("days").innerHTML = "0" + timeRemainingInDays;
+                            } else {
+                                document.getElementById("days").innerHTML = timeRemainingInDays;
+                            }
+                            
+                            if (timeRemainingInHours <= 9) {
+                                document.getElementById("hours").innerHTML = "0" + timeRemainingInHours;
+                            } else if (timeRemainingInHours == 24 | timeRemainingInHours == 0) {
+                                document.getElementById("hours").innerHTML = "00";
+                            } else {
+                                document.getElementById("hours").innerHTML = timeRemainingInHours;
+                            }
+
+                            if (timeRemainingInMinutes <= 9) {
+                                document.getElementById("minutes").innerHTML = "0" + timeRemainingInMinutes;
+                            } else if (timeRemainingInMinutes == 24 | timeRemainingInMinutes == 0) {
+                                document.getElementById("minutes").innerHTML = "00";
+                            } else {
+                                document.getElementById("minutes").innerHTML = timeRemainingInMinutes;
+                            }
+
+                            if (timeRemainingInSeconds <= 9) {
+                                document.getElementById("seconds").innerHTML = "0" + timeRemainingInSeconds;
+                            } else if (timeRemainingInSeconds == 24 | timeRemainingInSeconds == 0) {
+                                document.getElementById("seconds").innerHTML = "00";
+                            } else {
+                                document.getElementById("seconds").innerHTML = timeRemainingInSeconds;
+                            }
+                        };
+
+                        let runTimer = setInterval(updateTime, 1000);
+                    </script>
+                </div>
+            </div>
+
+            <p>Inscreva-se para saber mais sobre o lançamento</p>
+
+            <button onclick="clickButton()">Inscreva-se</button>
+
+            <script>
+                function clickButton() {
+                    alert("Clicou pq é gay.");
+                }
+            </script>
+        </div>
+        <img src="./images/rocket.svg">
+    </div>
+    <img class="bottomImg" src="./images/bottom-image.svg">
+</body>
+</html>

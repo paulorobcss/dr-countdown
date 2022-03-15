@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --black: #4D4C59;
+    --purple: #6C63FF;
+    --light-grey: #C8C8C8;
+    --text-color: #9C9AB6;
+}
+
+body {
+    background-color: white;
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.content {
+    position: absolute;
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    padding-top: 150px;
+    padding-left: 180px;
+    padding-right: 150px;
+}
+
+.content .launcherInfo {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    padding-left: 150px;
+    gap: 50px;
+    align-items: center;
+}
+
+.launcherInfo .readyToLaunch p {
+    text-transform: uppercase;
+    color: var(--purple);
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.launcherInfo .timerLabels {
+    display: flex;
+    /* gap: 80px; */
+    margin-left: 25px;
+}
+
+.launcherInfo .timerLabels p {
+    color: var(--light-grey);
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.launcherInfo .timerLabels p:nth-child(1) {
+    margin-right: 110px;
+    margin-left: 18px;
+}
+
+.launcherInfo .timerLabels p:nth-child(2) {
+    margin-right: 98px;
+}
+
+.launcherInfo .timerLabels p:nth-child(3) {
+    margin-right: 75px;
+}
+
+.launcherInfo .timerCountdown {
+    display: flex;
+    /* gap: 15px; */
+}
+
+.launcherInfo .timerCountdown p {
+    font-size: 72px;
+    font-weight: 400;
+    color: var(--black);
+    margin: 0 10px;
+}
+
+.launcherInfo .timerCountdown p.number {
+    width: 95px;
+    text-align: center;
+}
+
+.launcherInfo p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.launcherInfo button {
+    background-color: var(--purple);
+    height: 50px;
+    width: 160px;
+    color: white;
+    border-radius: 10px;
+}
+
+.content img {
+    width: 600px;
+    height: 435px;
+    margin-top: 7rem;
+}
