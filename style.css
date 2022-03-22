@@ -31,20 +31,24 @@ body {
 
     display: flex;
 
-    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
 
     box-sizing: border-box;
 
-    padding-top: 150px;
-    padding-left: 180px;
-    padding-right: 150px;
+    gap: 5vw;
+
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-bottom: 30px;
 }
 
 .content .launcherInfo {
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
-    padding-left: 150px;
+    padding-top: 10vh;
+    padding-left: 40px;
+    /* min-width: 566px; */
     gap: 50px;
     align-items: center;
 }
@@ -58,7 +62,6 @@ body {
 
 .launcherInfo .timerLabels {
     display: flex;
-    /* gap: 80px; */
     margin-left: 25px;
 }
 
@@ -83,8 +86,9 @@ body {
 
 .launcherInfo .timerCountdown {
     display: flex;
-    /* gap: 15px; */
 }
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .launcherInfo .timerCountdown p {
     font-size: 72px;
@@ -113,7 +117,120 @@ body {
 }
 
 .content img {
-    width: 600px;
-    height: 435px;
-    margin-top: 7rem;
+    width: 30rem;
+    height: 21rem;
+    margin-top: 5rem;
+    margin-left: 2rem;
+    margin-right: 3rem;
+}
+
+
+
+@media (max-width: 1100px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .content {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        width: 100vw;
+        height: 100vh;
+
+        margin: 0;
+        padding: 0;
+
+        position: relative;
+    }
+
+    .content .launcherInfo {
+        margin-top: 5vh;
+        padding: 0;
+        min-width: 0;
+    }
+
+    .content img {
+        margin: 0;
+        padding: 0;
+    }
+
+    .topImg, .bottomImg {
+        width: 100vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .content .launcherInfo {
+        gap: 25px;
+    }
+
+    .launcherInfo .readyToLaunch p {
+        font-size: 30px;
+    }
+
+    .launcherInfo .timerLabels p {
+        font-size: 10px;
+    }
+
+    .launcherInfo .timerLabels p:nth-child(1) {
+        margin-right: 105px;
+        margin-left: 18px;
+    }
+    
+    .launcherInfo .timerLabels p:nth-child(2) {
+        margin-right: 98px;
+    }
+    
+    .launcherInfo .timerLabels p:nth-child(3) {
+        margin-right: 90px;
+    }
+
+    .launcherInfo .timerCountdown p {
+        font-size: 54px;
+    }
+
+    .launcherInfo .timerCountdown p.number {
+        width: 80px;
+    }
+
+    .launcherInfo p {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .launcherInfo .readyToLaunch p {
+        font-size: 24px;
+    }
+
+    .launcherInfo .timerLabels p {
+        font-size: 10px;
+    }
+
+    .launcherInfo .timerLabels p:nth-child(1) {
+        margin-right: 90px;
+        margin-left: 0px;
+    }
+    
+    .launcherInfo .timerLabels p:nth-child(2) {
+        margin-right: 78px;
+    }
+    
+    .launcherInfo .timerLabels p:nth-child(3) {
+        margin-right: 65px;
+    }
+
+    .launcherInfo .timerCountdown p {
+        font-size: 46px;
+    }
+
+    .launcherInfo .timerCountdown p.number {
+        width: 60px;
+    }
+
+    .launcherInfo p {
+        font-size: 10px;
+    }
 }
